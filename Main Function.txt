@@ -1,0 +1,57 @@
+{
+        echo -e "=============================================="
+        echo -e "Welcome to CPU Scheduling!\n"
+        echo -e "\nWhat scheduling you would like to use?\n"
+        echo -e "1. FCFS \n2. SJF \n3. Both FCFS & SJF \n4. Round Robin\n"
+        read -p "Select your choice: " choice
+        
+        if [ $choice == 1 ] || [ $choice == 2 ] || [ $choice == 3 ]
+        then
+            read -p "Enter number of process: " n
+            
+            for (( i=0; i<n; i++ ))
+            {
+                echo "Enter the burst time of process $(($i+1)): "
+                read bt[$i]
+            }
+            echo
+            for (( i=0; i<n; i++ ))
+            {
+                echo "Enter the arrival time of process $(($i+1)): "
+                read at[$i]
+            }
+            
+            if [ $choice == 1 ]
+            then
+            {
+                #fcfs(n,&bt,&at);
+                echo "call FCFS"
+            }
+             elif [ $choice == 2 ]
+            then
+            {
+                #sjf(n,&bt,&at);
+                echo "call sjf"
+            }
+            elif [ choice == 3 ]
+            then
+            {
+                #fcfs(n,&bt,&at);
+                #sjf(n,&bt,&at);
+                echo "call FCFS"
+                echo "call sjf"
+            }
+            else
+            {
+                echo -e "Wrong Input!\n"
+            }
+            fi
+        elif [ choice == 4 ]
+        {
+            #roundrobin()
+            echo "call roundrobin"
+        }
+        else
+            echo -e "Wrong Input\n"
+        fi
+}
