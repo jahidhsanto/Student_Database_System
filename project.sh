@@ -127,9 +127,6 @@ Menu_Loop ()
     done
 }
 
-
-
-
 count=`wc -l < users.txt | tr -d ' '`
 arr=( Jahid Taisiq Santo Shahriar )
 control=1
